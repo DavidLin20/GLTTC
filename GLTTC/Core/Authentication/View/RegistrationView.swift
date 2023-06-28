@@ -38,7 +38,7 @@ struct RegistrationView: View {
                           title: "First Name",
                           placeholder: "John")
                 
-                InputView(text: $email, title: "Last Name", placeholder:
+                InputView(text: $lastName, title: "Last Name", placeholder:
                             "Doe")
                 
                 InputView(text: $password,
