@@ -41,7 +41,6 @@ struct LoginView: View {
                     .foregroundColor(.white)
                     .frame(width: UIScreen.main.bounds.width - 32, height: 48)
                 }
-                
                 .background(Color(.systemBlue))
                 .cornerRadius(10)
                 .padding(.top, 24)
@@ -49,7 +48,8 @@ struct LoginView: View {
                 Spacer()
                 
                 NavigationLink {
-                    
+                    RegistrationView()
+//                        .navigationBarBackButtonHidden(true)
                 } label: {
                     HStack(spacing: 3){
                         Text("Don't have an account?")
