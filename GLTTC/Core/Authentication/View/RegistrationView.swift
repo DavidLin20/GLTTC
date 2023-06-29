@@ -70,6 +70,8 @@ struct RegistrationView: View {
                 .frame(width: UIScreen.main.bounds.width - 32, height: 48)
             }
             .background(Color(.systemBlue))
+            .disabled(!formIsValid)
+            .opacity(formIsValid ? 1.0 : 0.5)
             .cornerRadius(10)
             .padding(.top, 24)
             
@@ -88,10 +90,23 @@ struct RegistrationView: View {
             }
         }
     }
-    
-    struct RegistrationView_Previews: PreviewProvider {
-        static var previews: some View {
-            RegistrationView()
-        }
+}
+
+extension RegistrationView: AuthenticatoinFormProtocol {
+    var formIsValid: Bool {
+        return !email.isEmpty
+        && email.contains("@")
+        && !password.isEmpty
+        && password.count > 5
+        && firstName.count > 1
+        && lastName.count > 1
+        && confirmPassword == password
+//        password.rangeOfCharacter(from: .uppercaseLetters)
+    }
+}
+
+struct RegistrationView_Previews: PreviewProvider {
+    static var previews: some View {
+        RegistrationView()
     }
 }
