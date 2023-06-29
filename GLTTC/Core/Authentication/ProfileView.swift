@@ -8,72 +8,76 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @EnvironmentObject var viewModel: AuthViewModel
+    
     var body: some View {
-        VStack {
-            List {
-                Section {
-                    HStack {
-                        Text(User.MOCK_USER.initials)
-                            .font(.title)
-                            .fontWeight(.semibold)
-                            .foregroundColor(.white)
-                            .frame(width: 72, height: 72)
-                            .background(Color(.systemGray3))
-                            .clipShape(Circle())
-                        
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text(User.MOCK_USER.firstName + " " + User.MOCK_USER.lastName)
-                                .font(.subheadline)
+        if let user = viewModel.currentUser {
+            VStack {
+                List {
+                    Section {
+                        HStack {
+                            Text(user.initials)
+                                .font(.title)
                                 .fontWeight(.semibold)
-                                .padding(.top, 4)
+                                .foregroundColor(.white)
+                                .frame(width: 72, height: 72)
+                                .background(Color(.systemGray3))
+                                .clipShape(Circle())
                             
-                            Text(User.MOCK_USER.email)
-                                .font(.footnote)
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(user.firstName + " " + user.lastName)
+                                    .font(.subheadline)
+                                    .fontWeight(.semibold)
+                                    .padding(.top, 4)
+                                
+                                Text(user.email)
+                                    .font(.footnote)
+                                    .foregroundColor(.gray)
+                            }
+                        }
+                    }
+                    
+                    Section("General") {
+                        HStack {
+                            SettingsRowView(imageName: "gear", title: "Version", tintColor: Color(.systemGray))
+                            
+                            Spacer()
+                            
+                            Text("1.0.0")
+                                .font(.subheadline)
                                 .foregroundColor(.gray)
                         }
                     }
-                }
-                
-                Section("General") {
-                    HStack {
-                        SettingsRowView(imageName: "gear", title: "Version", tintColor: Color(.systemGray))
+                    
+                    Section("Account") {
+                        Button {
+                            print("Sign out...")
+                        } label: {
+                            SettingsRowView(imageName: "arrow.left.circle.fill", title: "Sign out", tintColor: .red)
+                        }
                         
-                        Spacer()
-                        
-                        Text("1.0.0")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
-                    }
-                }
-                
-                Section("Account") {
-                    Button {
-                        print("Sign out...")
-                    } label: {
-                        SettingsRowView(imageName: "arrow.left.circle.fill", title: "Sign out", tintColor: .red)
                     }
                     
                 }
                 
-            }
-            
-            Spacer()
-            
-            Button{
-                print("Log user in...")
-            } label: {
-                HStack{
-                    Text("Delete Account")
-                        .fontWeight(.semibold)
+                Spacer()
+                
+                Button{
+                    print("Log user in...")
+                } label: {
+                    HStack{
+                        Text("Delete Account")
+                            .fontWeight(.semibold)
+                    }
+                    .foregroundColor(.white)
+                    .frame(width: UIScreen.main.bounds.width - 32, height: 48)
                 }
-                .foregroundColor(.white)
-                .frame(width: UIScreen.main.bounds.width - 32, height: 48)
+                .background(Color(.red))
+                .cornerRadius(10)
+                .padding(.top, 24)
             }
-            .background(Color(.red))
-            .cornerRadius(10)
-            .padding(.top, 24)
+            .background(Color(.systemGray6))
         }
-        .background(Color(.systemGray6))
     }
 }
 
