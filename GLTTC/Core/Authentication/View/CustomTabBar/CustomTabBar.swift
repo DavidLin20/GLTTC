@@ -7,22 +7,32 @@
 
 import SwiftUI
 
+enum Tabs: Int{
+    case league = 0
+    case account = 1
+}
+
 struct CustomTabBar: View {
+    
+    @Binding var selectedTab: Tabs
     var body: some View {
         
         HStack(alignment: .center) {
             
             Button {
+                selectedTab = .league
                 
             } label: {
                 
                 GeometryReader {
                     geo in
-                    
-                    Rectangle()
-                        .foregroundColor(.blue)
-                        .frame(width: geo.size.width/2, height: 4)
-                        .padding(.leading, geo.size.width/4)
+                    if selectedTab == .league {
+                        
+                        Rectangle()
+                            .foregroundColor(.blue)
+                            .frame(width: geo.size.width/2, height: 4)
+                            .padding(.leading, geo.size.width/4)
+                    }
                     
                     VStack (alignment: .center, spacing: 4) {
                         Image(systemName: "figure.table.tennis")
@@ -41,16 +51,18 @@ struct CustomTabBar: View {
             //.tint(Color("icons-secondary"))
             
             Button {
-                
+                selectedTab = .account
             } label: {
                 
                 GeometryReader {
                     geo in
                     
-//                    Rectangle()
-//                        .foregroundColor(.blue)
-//                        .frame(width: geo.size.width/2, height: 4)
-//                        .padding(.leading, geo.size.width/4)
+                    if selectedTab == .account  {
+                        Rectangle()
+                            .foregroundColor(.blue)
+                            .frame(width: geo.size.width/2, height: 4)
+                            .padding(.leading, geo.size.width/4)
+                    }
                     VStack (alignment: .center, spacing: 4) {
                         Image(systemName: "person.crop.circle")
                             .resizable()
@@ -77,6 +89,6 @@ struct CustomTabBar: View {
 
 struct CustomTabBar_Previews: PreviewProvider {
     static var previews: some View {
-        CustomTabBar()
+        CustomTabBar(selectedTab: .constant(.account))
     }
 }
