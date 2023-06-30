@@ -12,6 +12,20 @@ struct LeagueView: View {
     var body: some View {
             TopTabBar(selectedTab: $selectedTab)
             //Spacer()
+        
+        switch selectedTab {
+        case .ponging:
+            PongingView()
+            
+        case .onDeck:
+            OnDeckView()
+            
+        case .waiting:
+            WaitingView()
+            
+        case .players:
+            PlayersView()
+        }
     }
 }
 

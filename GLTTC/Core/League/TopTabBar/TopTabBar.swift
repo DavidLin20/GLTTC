@@ -8,7 +8,7 @@
 import SwiftUI
 
 enum TopTabs: Int{
-    case playing = 0
+    case ponging = 0
     case onDeck = 1
     case waiting = 2
     case players = 3
@@ -22,10 +22,10 @@ struct TopTabBar: View {
         HStack(alignment: .center) {
             
             Button {
-                selectedTab = .playing
+                selectedTab = .ponging
                } label: {
                    GeometryReader {geo in
-                    if selectedTab == .playing {
+                    if selectedTab == .ponging {
                         
                         Rectangle()
                             .foregroundColor(.blue)
@@ -115,6 +115,6 @@ struct TopTabBar: View {
 }
 struct TopTabBar_Previews: PreviewProvider {
     static var previews: some View {
-        TopTabBar(selectedTab: .constant(.playing))
+        TopTabBar(selectedTab: .constant(.ponging))
     }
 }
