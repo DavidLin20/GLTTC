@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct LeagueView: View {
+    @State var selectedTab: TopTabs = .players
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            TopTabBar(selectedTab: $selectedTab)
+            //Spacer()
     }
 }
 

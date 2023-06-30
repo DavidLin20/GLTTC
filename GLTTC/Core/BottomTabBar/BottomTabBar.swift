@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-enum Tabs: Int{
+enum BottomTabs: Int{
     case league = 0
     case account = 1
 }
 
 struct BottomTabBar: View {
     
-    @Binding var selectedTab: Tabs
+    @Binding var selectedTab: BottomTabs
     var body: some View {
         
         HStack(alignment: .center) {

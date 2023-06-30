@@ -8,27 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var selectedTab: Tabs = .league
     @EnvironmentObject var viewModel: AuthViewModel
     var body: some View {
-        VStack{
-            Group{
-                if viewModel.userSession != nil {
-                    switch selectedTab {
-                    case .league:
-                        LeagueView()
-                    case .account:
-                        AccountView()
+            VStack{
+                Text("GLTTC")
+                    .font(.title)
+                    .padding(.top, 10)
+                
+                Group{
+                    if viewModel.userSession != nil {
+                        LoggedInView()
+                    } else {
+                        LoginView()
                     }
-                    Spacer()
-                    BottomTabBar(selectedTab: $selectedTab)
-                } else {
-                   LoginView()
                 }
             }
-            
-        }
-        
     }
 }
 

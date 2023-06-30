@@ -23,7 +23,7 @@ struct RegistrationView: View {
             Image("logo")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 500, height: 200)
+                .frame(width: 500, height: 120)
                 .padding(.vertical, 16)
               
             Spacer()
