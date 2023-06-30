@@ -12,7 +12,7 @@ enum Tabs: Int{
     case account = 1
 }
 
-struct CustomTabBar: View {
+struct BottomTabBar: View {
     
     @Binding var selectedTab: Tabs
     var body: some View {
@@ -87,6 +87,6 @@ struct CustomTabBar: View {
 
 struct CustomTabBar_Previews: PreviewProvider {
     static var previews: some View {
-        CustomTabBar(selectedTab: .constant(.account))
+        BottomTabBar(selectedTab: .constant(.account))
     }
 }

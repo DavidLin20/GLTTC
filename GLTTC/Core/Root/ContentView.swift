@@ -21,7 +21,7 @@ struct ContentView: View {
                         AccountView()
                     }
                     Spacer()
-                    CustomTabBar(selectedTab: $selectedTab)
+                    BottomTabBar(selectedTab: $selectedTab)
                 } else {
                    LoginView()
                 }
