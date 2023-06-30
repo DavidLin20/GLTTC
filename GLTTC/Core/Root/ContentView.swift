@@ -14,7 +14,7 @@ struct ContentView: View {
         VStack{
             Group{
                 if viewModel.userSession != nil {
-                    ProfileView()
+                    AccountView()
                     Spacer()
                     CustomTabBar(selectedTab: $selectedTab)
                 } else {

@@ -63,7 +63,19 @@ class AuthViewModel: ObservableObject {
     }
     
     func deleteAccount() {
+        guard let user = Auth.auth().currentUser  else {
+            return
+        }
         
+        user.delete { error in
+            if let error = error {
+                print("Error deleting account: ", error.localizedDescription)
+            } else {
+                self.userSession = nil
+                self.currentUser = nil
+                print("User account deleted")
+            }
+        }
     }
     
     func fetchUser() async {

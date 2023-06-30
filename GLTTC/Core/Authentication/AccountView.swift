@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ProfileView: View {
+struct AccountView: View {
     @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
@@ -58,31 +58,22 @@ struct ProfileView: View {
                         
                     }
                     
-                }
-                
-                Spacer()
-                
-                Button{
-                    print("Log user in...")
-                } label: {
-                    HStack{
-                        Text("Delete Account")
-                            .fontWeight(.semibold)
+                    Section {
+                        Button {
+                            viewModel.deleteAccount()
+                        } label: {
+                            SettingsRowView(imageName: "person.crop.circle.fill.badge.xmark", title: "Delete account", tintColor: .red)
+                        }
                     }
-                    .foregroundColor(.white)
-                    .frame(width: UIScreen.main.bounds.width - 32, height: 48)
+                    
                 }
-                .background(Color(.red))
-                .cornerRadius(10)
-                .padding(.top, 24)
             }
-            .background(Color(.systemGray6))
         }
     }
-}
-
-struct ProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileView()
+    
+    struct ProfileView_Previews: PreviewProvider {
+        static var previews: some View {
+            AccountView()
+        }
     }
 }
