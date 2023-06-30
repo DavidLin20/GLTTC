@@ -14,7 +14,12 @@ struct ContentView: View {
         VStack{
             Group{
                 if viewModel.userSession != nil {
-                    AccountView()
+                    switch selectedTab {
+                    case .league:
+                        LeagueView()
+                    case .account:
+                        AccountView()
+                    }
                     Spacer()
                     CustomTabBar(selectedTab: $selectedTab)
                 } else {

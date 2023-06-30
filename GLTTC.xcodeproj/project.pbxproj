@@ -15,6 +15,7 @@
 		636D1E992A4BB9050003AAF1 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D1E982A4BB9050003AAF1 /* AccountView.swift */; };
 		636D1E9B2A4BBAAB0003AAF1 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D1E9A2A4BBAAB0003AAF1 /* SettingsRowView.swift */; };
 		636D1E9D2A4BC0140003AAF1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D1E9C2A4BC0140003AAF1 /* User.swift */; };
+		63ED39CB2A4E62DA00D97EE0 /* LeagueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ED39CA2A4E62DA00D97EE0 /* LeagueView.swift */; };
 		823D0D602A4E3FCB00F6BE83 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823D0D5F2A4E3FCB00F6BE83 /* CustomTabBar.swift */; };
 		8292CFF72A4B9EEB003B8DEE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8292CFF62A4B9EEB003B8DEE /* LoginView.swift */; };
 		8292CFFB2A4BA67C003B8DEE /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8292CFFA2A4BA67C003B8DEE /* InputView.swift */; };
@@ -37,6 +38,7 @@
 		636D1E982A4BB9050003AAF1 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AccountView.swift; path = GLTTC/Core/Authentication/AccountView.swift; sourceTree = SOURCE_ROOT; };
 		636D1E9A2A4BBAAB0003AAF1 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		636D1E9C2A4BC0140003AAF1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = GLTTC/Components/User.swift; sourceTree = SOURCE_ROOT; };
+		63ED39CA2A4E62DA00D97EE0 /* LeagueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueView.swift; sourceTree = "<group>"; };
 		823D0D5F2A4E3FCB00F6BE83 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		8292CFF62A4B9EEB003B8DEE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		8292CFFA2A4BA67C003B8DEE /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
@@ -98,6 +100,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		63ED39C92A4E62C200D97EE0 /* League */ = {
+			isa = PBXGroup;
+			children = (
+				63ED39CA2A4E62DA00D97EE0 /* LeagueView.swift */,
+			);
+			path = League;
+			sourceTree = "<group>";
+		};
 		823D0D5E2A4E3FA400F6BE83 /* CustomTabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +127,7 @@
 		8292CFF02A4B9E09003B8DEE /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				63ED39C92A4E62C200D97EE0 /* League */,
 				8292CFF52A4B9E96003B8DEE /* Account */,
 				8292CFF42A4B9E87003B8DEE /* Authentication */,
 				8292CFF32A4B9E69003B8DEE /* Root */,
@@ -265,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63ED39CB2A4E62DA00D97EE0 /* LeagueView.swift in Sources */,
 				8292CFF72A4B9EEB003B8DEE /* LoginView.swift in Sources */,
 				8292CFFB2A4BA67C003B8DEE /* InputView.swift in Sources */,
 				633DC3682A4B8F7D00A73ABF /* ContentView.swift in Sources */,

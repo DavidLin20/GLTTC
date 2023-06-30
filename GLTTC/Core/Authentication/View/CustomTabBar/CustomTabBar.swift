@@ -21,9 +21,7 @@ struct CustomTabBar: View {
             
             Button {
                 selectedTab = .league
-                
-            } label: {
-                
+               } label: {
                 GeometryReader {
                     geo in
                     if selectedTab == .league {
