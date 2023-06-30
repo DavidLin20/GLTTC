@@ -18,6 +18,10 @@
 		63ED39CB2A4E62DA00D97EE0 /* LeagueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ED39CA2A4E62DA00D97EE0 /* LeagueView.swift */; };
 		63ED39D12A4F90FF00D97EE0 /* LoggedInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ED39D02A4F90FF00D97EE0 /* LoggedInView.swift */; };
 		820495412A4F835E0055FFEF /* TopTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820495402A4F835E0055FFEF /* TopTabBar.swift */; };
+		820495442A4F9DC80055FFEF /* PongingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820495432A4F9DC80055FFEF /* PongingView.swift */; };
+		820495462A4F9DD60055FFEF /* OnDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820495452A4F9DD60055FFEF /* OnDeckView.swift */; };
+		820495482A4F9DDF0055FFEF /* WaitingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820495472A4F9DDF0055FFEF /* WaitingView.swift */; };
+		8204954A2A4F9DFC0055FFEF /* PlayersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820495492A4F9DFC0055FFEF /* PlayersView.swift */; };
 		823D0D602A4E3FCB00F6BE83 /* BottomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823D0D5F2A4E3FCB00F6BE83 /* BottomTabBar.swift */; };
 		8292CFF72A4B9EEB003B8DEE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8292CFF62A4B9EEB003B8DEE /* LoginView.swift */; };
 		8292CFFB2A4BA67C003B8DEE /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8292CFFA2A4BA67C003B8DEE /* InputView.swift */; };
@@ -43,6 +47,10 @@
 		63ED39CA2A4E62DA00D97EE0 /* LeagueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueView.swift; sourceTree = "<group>"; };
 		63ED39D02A4F90FF00D97EE0 /* LoggedInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInView.swift; sourceTree = "<group>"; };
 		820495402A4F835E0055FFEF /* TopTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBar.swift; sourceTree = "<group>"; };
+		820495432A4F9DC80055FFEF /* PongingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PongingView.swift; sourceTree = "<group>"; };
+		820495452A4F9DD60055FFEF /* OnDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnDeckView.swift; sourceTree = "<group>"; };
+		820495472A4F9DDF0055FFEF /* WaitingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingView.swift; sourceTree = "<group>"; };
+		820495492A4F9DFC0055FFEF /* PlayersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersView.swift; sourceTree = "<group>"; };
 		823D0D5F2A4E3FCB00F6BE83 /* BottomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabBar.swift; sourceTree = "<group>"; };
 		8292CFF62A4B9EEB003B8DEE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		8292CFFA2A4BA67C003B8DEE /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
@@ -106,6 +114,7 @@
 		63ED39C92A4E62C200D97EE0 /* League */ = {
 			isa = PBXGroup;
 			children = (
+				820495422A4F9DA70055FFEF /* TopTabBarView */,
 				8204953F2A4F834A0055FFEF /* TopTabBar */,
 				63ED39CA2A4E62DA00D97EE0 /* LeagueView.swift */,
 			);
@@ -126,6 +135,17 @@
 				820495402A4F835E0055FFEF /* TopTabBar.swift */,
 			);
 			path = TopTabBar;
+			sourceTree = "<group>";
+		};
+		820495422A4F9DA70055FFEF /* TopTabBarView */ = {
+			isa = PBXGroup;
+			children = (
+				820495432A4F9DC80055FFEF /* PongingView.swift */,
+				820495452A4F9DD60055FFEF /* OnDeckView.swift */,
+				820495472A4F9DDF0055FFEF /* WaitingView.swift */,
+				820495492A4F9DFC0055FFEF /* PlayersView.swift */,
+			);
+			path = TopTabBarView;
 			sourceTree = "<group>";
 		};
 		823D0D5E2A4E3FA400F6BE83 /* BottomTabBar */ = {
@@ -302,13 +322,17 @@
 				63ED39CB2A4E62DA00D97EE0 /* LeagueView.swift in Sources */,
 				8292CFF72A4B9EEB003B8DEE /* LoginView.swift in Sources */,
 				8292CFFB2A4BA67C003B8DEE /* InputView.swift in Sources */,
+				820495442A4F9DC80055FFEF /* PongingView.swift in Sources */,
 				633DC3682A4B8F7D00A73ABF /* ContentView.swift in Sources */,
 				633DC3662A4B8F7D00A73ABF /* GLTTCApp.swift in Sources */,
 				820495412A4F835E0055FFEF /* TopTabBar.swift in Sources */,
 				636D1E9D2A4BC0140003AAF1 /* User.swift in Sources */,
 				636D1E992A4BB9050003AAF1 /* AccountView.swift in Sources */,
+				820495462A4F9DD60055FFEF /* OnDeckView.swift in Sources */,
+				820495482A4F9DDF0055FFEF /* WaitingView.swift in Sources */,
 				823D0D602A4E3FCB00F6BE83 /* BottomTabBar.swift in Sources */,
 				636D1E972A4BB2E70003AAF1 /* RegistrationView.swift in Sources */,
+				8204954A2A4F9DFC0055FFEF /* PlayersView.swift in Sources */,
 				636D1E9B2A4BBAAB0003AAF1 /* SettingsRowView.swift in Sources */,
 				63ED39D12A4F90FF00D97EE0 /* LoggedInView.swift in Sources */,
 				82FF00AD2A4CE6D10057BFAF /* AuthViewModel.swift in Sources */,

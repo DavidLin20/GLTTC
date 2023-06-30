@@ -34,7 +34,7 @@ struct TopTabBar: View {
                     }
                     
                     VStack (alignment: .center, spacing: 4) {
-                        Text("Playing")
+                        Text("Ponging")
                             .foregroundColor(.gray )
                         
                     }
