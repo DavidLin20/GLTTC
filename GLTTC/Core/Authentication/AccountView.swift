@@ -35,6 +35,12 @@ struct AccountView: View {
                                     .foregroundColor(.gray)
                             }
                         }
+                        Button {
+                            //
+                        } label: {
+                            SettingsRowView(imageName: "person.text.rectangle.fill", title: "Profile", tintColor: .blue)
+                        }
+                        
                     }
                     
                     Section("General") {
@@ -71,7 +77,7 @@ struct AccountView: View {
         }
     }
     
-    struct ProfileView_Previews: PreviewProvider {
+    struct AccountView_Previews: PreviewProvider {
         static var previews: some View {
             AccountView()
         }
