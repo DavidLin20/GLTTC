@@ -17,7 +17,7 @@ struct LoggedInView: View {
         case .account:
             AccountView()
         }
-        Spacer()
+        
         BottomTabBar(selectedTab: $selectedTab)
         
     }

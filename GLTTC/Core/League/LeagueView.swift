@@ -9,9 +9,10 @@ import SwiftUI
 
 struct LeagueView: View {
     @State var selectedTab: TopTabs = .players
+    @State var isCheckedIn: Bool = false
     var body: some View {
-            TopTabBar(selectedTab: $selectedTab)
-            //Spacer()
+        TopTabBar(selectedTab: $selectedTab)
+        //Spacer()
         
         switch selectedTab {
         case .ponging:
@@ -25,6 +26,24 @@ struct LeagueView: View {
             
         case .players:
             PlayersView()
+        }
+        
+        Spacer()
+        
+        Button(action: {
+            isCheckedIn.toggle()
+        }) {
+            HStack {
+                Text("Check \(isCheckedIn ? "Out" : "In")")
+                    .fontWeight(.semibold)
+                    .foregroundColor(.white)
+                Image(systemName: isCheckedIn ? "figure.walk.departure" : "figure.walk.arrival")
+                    .foregroundColor(.white) // Set the same color as the text
+            }
+            .frame(width: UIScreen.main.bounds.width - 85, height: 40)
+            .background(isCheckedIn ? Color.red : Color.blue)
+            .cornerRadius(10)
+            .padding(.top, 24)
         }
     }
 }

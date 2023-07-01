@@ -12,6 +12,7 @@ struct User: Identifiable, Codable {
     let firstName: String
     let lastName: String
     let email: String
+    let isCheckedIn: Bool
     
     var initials: String {
         let fullName = firstName + " " + lastName
@@ -26,5 +27,5 @@ struct User: Identifiable, Codable {
 }
 
 extension User {
-    static var MOCK_USER = User(id: NSUUID().uuidString, firstName: "Michael", lastName: "Jordan", email: "test@gmail.com")
+    static var MOCK_USER = User(id: NSUUID().uuidString, firstName: "Michael", lastName: "Jordan", email: "test@gmail.com", isCheckedIn: false)
 }
