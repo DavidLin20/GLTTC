@@ -10,6 +10,7 @@ import SwiftUI
 struct LeagueView: View {
     @State var selectedTab: TopTabs = .players
     @State var isCheckedIn: Bool = false
+    @EnvironmentObject var viewModel: AuthViewModel
     var body: some View {
         TopTabBar(selectedTab: $selectedTab)
         //Spacer()
@@ -32,6 +33,9 @@ struct LeagueView: View {
         
         Button(action: {
             isCheckedIn.toggle()
+            Task {
+                await viewModel.checkUserIn(isCheckedIn: isCheckedIn)
+            }
         }) {
             HStack {
                 Text("Check \(isCheckedIn ? "Out" : "In")")

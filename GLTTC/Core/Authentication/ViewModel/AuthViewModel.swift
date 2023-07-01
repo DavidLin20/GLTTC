@@ -87,4 +87,20 @@ class AuthViewModel: ObservableObject {
         
         print("DEBUG: Current user is \(self.currentUser)")
     }
+    
+    func checkUserIn(isCheckedIn: Bool) async {
+        guard var currentUser = currentUser else {
+            return
+        }
+        
+        do {
+            currentUser.isCheckedIn = isCheckedIn
+            let encodedUser = try Firestore.Encoder().encode(currentUser)
+            try await Firestore.firestore().collection("users").document(currentUser.id).setData(encodedUser, merge: true)
+            print("User isCheckedIn updated successfully")
+        } catch {
+            print("Error updating isCheckedIn: \(error.localizedDescription)")
+        }
+    }
+
 }

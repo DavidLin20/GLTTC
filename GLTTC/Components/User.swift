@@ -12,7 +12,7 @@ struct User: Identifiable, Codable {
     let firstName: String
     let lastName: String
     let email: String
-    let isCheckedIn: Bool
+    var isCheckedIn: Bool
     
     var initials: String {
         let fullName = firstName + " " + lastName
