@@ -7,11 +7,17 @@
 
 import SwiftUI
 
+//private enum Field: Int, CaseIterable {
+//    case accescode
+//}
+
+
 struct LeagueView: View {
     @State private var accessCode = ""
     @State private var showAlert = false
     @State var selectedTab: TopTabs = .players
     @State var isCheckedIn: Bool = false
+    @FocusState private var isFocused: Bool
     @EnvironmentObject var viewModel: AuthViewModel
     var body: some View {
         TopTabBar(selectedTab: $selectedTab)
@@ -37,7 +43,6 @@ struct LeagueView: View {
             // Check in Button
             if (!isCheckedIn) {
                 Button(action: {
-                    //                    isCheckedIn.toggle()
                     showAlert = true
                 }) {
                     HStack {
@@ -54,7 +59,8 @@ struct LeagueView: View {
                 }
                 .alert("Check in", isPresented: $showAlert, actions: {
                     TextField("Access Code", text: $accessCode)
-                    
+                        .focused($isFocused)
+                        .keyboardType(.numberPad)
                     Button(action: {}) {
                         Text("Cancel")
                             .foregroundColor(.red)
@@ -72,9 +78,7 @@ struct LeagueView: View {
                 
             } else {
                 // Check out button
-                
                 Button(action: {
-                    //                    isCheckedIn.toggle()
                     showAlert = true
                 }) {
                     HStack {
@@ -103,7 +107,18 @@ struct LeagueView: View {
                 }
             }
         }
+
+        .toolbar {
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+                Button("Done") {
+                    isFocused = false
+                }
+                .disabled(!isFocused)
+            }
+        }
     }
+    
 }
 
 struct LeagueView_Previews: PreviewProvider {

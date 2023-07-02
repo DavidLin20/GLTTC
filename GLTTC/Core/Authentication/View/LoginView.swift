@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
+    @FocusState private var isFocused: Bool
     @EnvironmentObject var viewModel : AuthViewModel
     
     var body: some View {
@@ -24,9 +25,10 @@ struct LoginView: View {
                 VStack(spacing: 24){
                     InputView(text: $email, title: "Email Address", placeholder: "name@example.com")
                         .autocapitalization(.none)
+                        .focused($isFocused)
                     
                     InputView(text: $password, title: "Password", placeholder: "Enter your password", isSecureField: true)
-                    
+                        .focused($isFocused)
                 }
                 .padding(.horizontal)
                 .padding(.top, 12)
@@ -65,6 +67,14 @@ struct LoginView: View {
                     .font(.system(size: 14))
                 }
                 
+            }
+            .toolbar {
+                ToolbarItemGroup(placement: .keyboard) {
+                    Spacer()
+                    Button("Done") {
+                        isFocused = false
+                    }
+                }
             }
         }
     }

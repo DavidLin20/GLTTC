@@ -14,6 +14,7 @@ struct RegistrationView: View {
     @State private var password = ""
     @State private var confirmPassword = ""
     @State private var isCheckedIn = false
+    @FocusState private var isFocused: Bool
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var viewModel: AuthViewModel
     
@@ -34,24 +35,29 @@ struct RegistrationView: View {
                           title: "Email Address",
                           placeholder: "name@example.com")
                 .autocapitalization(.none)
+                .focused($isFocused)
                 
                 InputView(text: $firstName,
                           title: "First Name",
                           placeholder: "John")
+                .focused($isFocused)
                 
                 InputView(text: $lastName, title: "Last Name", placeholder:
                             "Doe")
+                .focused($isFocused)
                 
                 InputView(text: $password,
                           title: "Password",
                           placeholder: "Enter your password",
                           isSecureField: true)
+                .focused($isFocused)
                 
                 ZStack(alignment: .trailing) {
                     InputView(text: $confirmPassword,
                               title: "Confirm Password",
                               placeholder: "Confirm your password",
                               isSecureField: true)
+                    .focused($isFocused)
                     
                     if !password.isEmpty && !confirmPassword.isEmpty {
                         if password == confirmPassword {
@@ -104,6 +110,14 @@ struct RegistrationView: View {
                         .fontWeight(.bold)
                 }
                 .font(.system(size: 14))
+            }
+        }
+        .toolbar {
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+                Button("Done") {
+                    isFocused = false
+                }
             }
         }
     }
