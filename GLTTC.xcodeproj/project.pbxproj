@@ -161,7 +161,6 @@
 		823D0D5E2A4E3FA400F6BE83 /* BottomTabBar */ = {
 			isa = PBXGroup;
 			children = (
-				8292CFEF2A4B9E05003B8DEE /* Model */,
 				823D0D5F2A4E3FCB00F6BE83 /* BottomTabBar.swift */,
 			);
 			path = BottomTabBar;
@@ -173,7 +172,7 @@
 				636D1E9C2A4BC0140003AAF1 /* User.swift */,
 			);
 			name = Model;
-			path = ../../Model;
+			path = ../Model;
 			sourceTree = "<group>";
 		};
 		8292CFF02A4B9E09003B8DEE /* Core */ = {
@@ -181,6 +180,7 @@
 			children = (
 				63ED39CF2A4F90DF00D97EE0 /* LoggedInView */,
 				823D0D5E2A4E3FA400F6BE83 /* BottomTabBar */,
+				8292CFEF2A4B9E05003B8DEE /* Model */,
 				63ED39C92A4E62C200D97EE0 /* League */,
 				8292CFF52A4B9E96003B8DEE /* Account */,
 				8292CFF42A4B9E87003B8DEE /* Authentication */,
