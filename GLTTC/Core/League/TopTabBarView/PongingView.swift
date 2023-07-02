@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PongingView: View {
     var body: some View {
-        Text("Hello, from Ponging View!")
+        TournamentView()
     }
 }
 
