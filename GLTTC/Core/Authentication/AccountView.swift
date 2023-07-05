@@ -11,6 +11,7 @@ struct AccountView: View {
     @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
+        NavigationStack {
         if let user = viewModel.currentUser {
             VStack {
                 List {
@@ -35,12 +36,15 @@ struct AccountView: View {
                                     .foregroundColor(.gray)
                             }
                         }
-                        Button {
-                            //
-                        } label: {
-                            SettingsRowView(imageName: "person.text.rectangle.fill", title: "Profile", tintColor: .blue)
-                        }
                         
+                        
+                        
+                    }
+                    
+                    NavigationLink {
+                        ProfileView()
+                    } label: {
+                        SettingsRowView(imageName: "person.text.rectangle.fill", title: "Profile", tintColor: .blue)
                     }
                     
                     Section("General") {
@@ -73,6 +77,7 @@ struct AccountView: View {
                     }
                     
                 }
+            }
             }
         }
     }

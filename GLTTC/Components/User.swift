@@ -13,6 +13,7 @@ struct User: Identifiable, Codable {
     let lastName: String
     let email: String
     var isCheckedIn: Bool
+    var rating: Int8?
     
     var initials: String {
         let fullName = firstName + " " + lastName
@@ -24,6 +25,10 @@ struct User: Identifiable, Codable {
         
         return ""
     }
+    
+    mutating func setRating(_ newRating: Int8) {
+            rating = newRating
+        }
 }
 
 extension User {

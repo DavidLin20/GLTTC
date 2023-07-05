@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63298B952A524133005598C3 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63298B942A524133005598C3 /* RatingView.swift */; };
 		633DC3662A4B8F7D00A73ABF /* GLTTCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633DC3652A4B8F7D00A73ABF /* GLTTCApp.swift */; };
 		633DC3682A4B8F7D00A73ABF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633DC3672A4B8F7D00A73ABF /* ContentView.swift */; };
 		633DC36A2A4B8F7E00A73ABF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 633DC3692A4B8F7E00A73ABF /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		63298B942A524133005598C3 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		633DC3622A4B8F7D00A73ABF /* GLTTC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GLTTC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		633DC3652A4B8F7D00A73ABF /* GLTTCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLTTCApp.swift; sourceTree = "<group>"; };
 		633DC3672A4B8F7D00A73ABF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -82,6 +84,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63298B932A524121005598C3 /* Rating */ = {
+			isa = PBXGroup;
+			children = (
+				63298B942A524133005598C3 /* RatingView.swift */,
+			);
+			path = Rating;
+			sourceTree = "<group>";
+		};
 		633DC3592A4B8F7D00A73ABF = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +151,7 @@
 		63ED39D22A4FB7A900D97EE0 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				63298B932A524121005598C3 /* Rating */,
 				63ED39D32A4FB7BC00D97EE0 /* ProfileView.swift */,
 			);
 			path = Profile;
@@ -363,6 +374,7 @@
 				823D0D602A4E3FCB00F6BE83 /* BottomTabBar.swift in Sources */,
 				820EA5912A51014F001C9F5B /* TournamentViewModel.swift in Sources */,
 				636D1E972A4BB2E70003AAF1 /* RegistrationView.swift in Sources */,
+				63298B952A524133005598C3 /* RatingView.swift in Sources */,
 				8204954A2A4F9DFC0055FFEF /* PlayersView.swift in Sources */,
 				636D1E9B2A4BBAAB0003AAF1 /* SettingsRowView.swift in Sources */,
 				63ED39D12A4F90FF00D97EE0 /* LoggedInView.swift in Sources */,
