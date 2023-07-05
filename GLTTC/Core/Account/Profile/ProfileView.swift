@@ -11,6 +11,7 @@ struct ProfileView: View {
     @State var showRatingView: Bool = false
     @EnvironmentObject var viewModel: AuthViewModel
     var body: some View {
+        
         if let user = viewModel.currentUser {
             
             VStack {
@@ -71,16 +72,28 @@ struct ProfileView: View {
                             }
                         }
                         
-                        Button {
-                            showRatingView.toggle()
-                        } label: {
-                            Text("Rating")
-                                .foregroundColor(.black)
-//                            Text(user.rating)
-                        }
-                        .sheet(isPresented: $showRatingView, content: {
+                        NavigationLink {
                             RatingView()
-                        })
+                        } label: {
+                            VStack(alignment: .leading) {
+                                Text("Rating")
+                                    .foregroundColor(.black)
+                                Text(String(user.rating))
+                                    .font(.system(size: 20))
+                            }
+                        }
+
+                        
+//                        Button {
+//                            showRatingView.toggle()
+//                        } label: {
+//                            Text("Rating")
+//                                .foregroundColor(.black)
+////                            Text(user.rating)
+//                        }
+//                        .sheet(isPresented: $showRatingView, content: {
+//                            RatingView()
+//                        })
                         
                         
                      

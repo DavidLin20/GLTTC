@@ -37,11 +37,11 @@ class AuthViewModel: ObservableObject {
         
     }
     
-    func createUser(withEmail email: String, password: String, firstName: String, lastName: String, isCheckedIn: Bool) async throws {
+    func createUser(withEmail email: String, password: String, firstName: String, lastName: String, isCheckedIn: Bool, rating: Int) async throws {
         do {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
             self.userSession = result.user
-            let user = User(id: result.user.uid, firstName: firstName, lastName: lastName, email: email, isCheckedIn: false)
+            let user = User(id: result.user.uid, firstName: firstName, lastName: lastName, email: email, isCheckedIn: false, rating: 0)
             let encodedUser = try Firestore.Encoder().encode(user) 
             try await Firestore.firestore().collection("users").document(user.id).setData(encodedUser)
             await fetchUser()
@@ -100,6 +100,22 @@ class AuthViewModel: ObservableObject {
             print("User isCheckedIn updated successfully")
         } catch {
             print("Error updating isCheckedIn: \(error.localizedDescription)")
+        }
+    }
+    
+    func setUserRating(rating: String) async {
+        guard var currentUser = currentUser else {
+            return
+        }
+        
+        do {
+            currentUser.rating = Int(rating) ?? 0
+            let encodedUser = try Firestore.Encoder().encode(currentUser)
+            try await Firestore.firestore().collection("users").document(currentUser.id).setData(encodedUser, merge: true)
+            print("User rating updated successfully")
+            await fetchUser()
+        } catch {
+            print("Error updating rating: \(error.localizedDescription)")
         }
     }
 

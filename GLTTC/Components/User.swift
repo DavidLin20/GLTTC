@@ -13,7 +13,7 @@ struct User: Identifiable, Codable {
     let lastName: String
     let email: String
     var isCheckedIn: Bool
-    var rating: Int8?
+    var rating: Int
     
     var initials: String {
         let fullName = firstName + " " + lastName
@@ -26,11 +26,11 @@ struct User: Identifiable, Codable {
         return ""
     }
     
-    mutating func setRating(_ newRating: Int8) {
+    mutating func setRating(_ newRating: Int) {
             rating = newRating
         }
 }
 
 extension User {
-    static var MOCK_USER = User(id: NSUUID().uuidString, firstName: "Michael", lastName: "Jordan", email: "test@gmail.com", isCheckedIn: false)
+    static var MOCK_USER = User(id: NSUUID().uuidString, firstName: "Michael", lastName: "Jordan", email: "test@gmail.com", isCheckedIn: false, rating: 0)
 }

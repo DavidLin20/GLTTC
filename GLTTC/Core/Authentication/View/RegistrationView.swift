@@ -14,6 +14,7 @@ struct RegistrationView: View {
     @State private var password = ""
     @State private var confirmPassword = ""
     @State private var isCheckedIn = false
+    @State private var rating = 0
     @FocusState private var isFocused: Bool
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var viewModel: AuthViewModel
@@ -81,7 +82,7 @@ struct RegistrationView: View {
             Button{
                 Task{
                     
-                    try await viewModel.createUser(withEmail:email, password: password, firstName: firstName, lastName:lastName, isCheckedIn:isCheckedIn )
+                    try await viewModel.createUser(withEmail:email, password: password, firstName: firstName, lastName:lastName, isCheckedIn:isCheckedIn, rating: rating)
                 }
             } label: {
                 HStack{
