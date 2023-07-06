@@ -11,7 +11,7 @@ struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
     @FocusState private var isFocused: Bool
-    @EnvironmentObject var viewModel : AuthViewModel
+    @EnvironmentObject var authenticationViewModel : AuthViewModel
     
     var body: some View {
         NavigationStack{
@@ -35,7 +35,7 @@ struct LoginView: View {
                 
                 Button{
                     Task{
-                        try await viewModel.signIn(withEmail: email, passsword: password)
+                        try await authenticationViewModel.signIn(withEmail: email, passsword: password)
                     }
                     
                 } label: {

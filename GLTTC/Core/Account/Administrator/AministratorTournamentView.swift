@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AdministratorTournamentView: View {
-    @StateObject private var viewModel = TournamentViewModel()
+    @StateObject private var tournamentViewModel = TournamentViewModel()
     @State private var accessCode = ""
     @State private var date = ""
     
@@ -27,16 +27,16 @@ struct AdministratorTournamentView: View {
                        .padding()
                    
                    Button("Create") {
-                       viewModel.createTournament(withAccessCode: accessCode, withDate: date)
+                       tournamentViewModel.createTournament(withAccessCode: accessCode, withDate: date)
                    }
                    .padding()
             
                     Button("Fetch") {
-                            viewModel.fetchTournaments()
+                            tournamentViewModel.fetchTournaments()
                         }
                         .padding()
                    
-                   List(viewModel.tournaments) { tournament in
+                   List(tournamentViewModel.tournaments) { tournament in
                        Text(tournament.accessCode)
                    }
                }

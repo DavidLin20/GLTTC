@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var viewModel: AuthViewModel
+    @EnvironmentObject var authenticationViewModel: AuthViewModel
     var body: some View {
             VStack{
                 Text("GLTTC")
@@ -16,7 +16,7 @@ struct ContentView: View {
                     .padding(.top, 10)
                 
                 Group{
-                    if viewModel.userSession != nil {
+                    if authenticationViewModel.userSession != nil {
                         LoggedInView()
                     } else {
                         LoginView()

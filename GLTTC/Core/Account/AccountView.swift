@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct AccountView: View {
-    @EnvironmentObject var viewModel: AuthViewModel
+    @EnvironmentObject var authenticationViewModel: AuthViewModel
     var body: some View {
-        if let user = viewModel.currentUser
+        if let user = authenticationViewModel.currentUser
         {
             if (user.isAdmin) {
                 AdministratorAccountView()

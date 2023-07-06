@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct AdministratorAccountView: View {
-    @EnvironmentObject var viewModel: AuthViewModel
+    @EnvironmentObject var authenticationViewModel: AuthViewModel
     var body: some View {
         NavigationStack {
-            if let user = viewModel.currentUser {
+            if let user = authenticationViewModel.currentUser {
                 VStack {
                     List {
                         Section {
@@ -58,7 +58,7 @@ struct AdministratorAccountView: View {
                         
                         Section("Account") {
                             Button {
-                                viewModel.signOut()
+                                authenticationViewModel.signOut()
                             } label: {
                                 SettingsRowView(imageName: "arrow.left.circle.fill", title: "Sign out", tintColor: .red)
                             }
@@ -67,7 +67,7 @@ struct AdministratorAccountView: View {
                         
                         Section {
                             Button {
-                                viewModel.deleteAccount()
+                                authenticationViewModel.deleteAccount()
                             } label: {
                                 SettingsRowView(imageName: "person.crop.circle.fill.badge.xmark", title: "Delete account", tintColor: .red)
                             }

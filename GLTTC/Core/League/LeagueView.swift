@@ -39,7 +39,7 @@ struct LeagueView: View {
         Spacer()
         
         VStack {
-            // Check in Button
+          
             if (!isCheckedIn) {
 //                Button(action: {
 //                    showAlert = true
@@ -109,7 +109,6 @@ struct LeagueView: View {
                             isCheckedIn.toggle()
                             await authenticationViewModel.checkUserIn(isCheckedIn: isCheckedIn)
                         } else {
-                            // Display an error message or take appropriate action when access code is invalid
                             showAccessCodeAlert = true
                             alertMessage = "Please try again. "
                         }

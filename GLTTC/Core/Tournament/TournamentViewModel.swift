@@ -96,21 +96,4 @@ class TournamentViewModel: ObservableObject {
             return false
         }
     }
-    
-//    do {
-//        let accessCode = "12345" // Example access code
-//        let isAccessCodeValid = try await verifyAccessCode(accessCode: accessCode)
-//
-//        if isAccessCodeValid {
-//            // Access code is valid
-//            print("Access code is valid")
-//        } else {
-//            // Access code is invalid or no tournament found
-//            print("Access code is invalid or no tournament found")
-//        }
-//    } catch {
-//        // Handle error
-//        print("Error in verifyAccessCode: \(error.localizedDescription)")
-//    }
-
 }
