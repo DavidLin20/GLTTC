@@ -9,7 +9,8 @@ import SwiftUI
 
 @main
 struct GLTTCApp: App {
-    @StateObject var viewModel = AuthViewModel()
+    @StateObject var authenticationViewModel = AuthViewModel()
+    @StateObject var tournamentViewModel = TournamentViewModel()
     
     init() {
         FirebaseApp.configure()
@@ -17,7 +18,8 @@ struct GLTTCApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(viewModel)
+                .environmentObject(authenticationViewModel)
+                .environmentObject(tournamentViewModel)
         }
     }
 }

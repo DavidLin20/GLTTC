@@ -7,18 +7,16 @@
 
 import SwiftUI
 
-//private enum Field: Int, CaseIterable {
-//    case accescode
-//}
-
-
 struct LeagueView: View {
     @State private var accessCode = ""
     @State private var showAlert = false
+    @State private var showAccessCodeAlert = false
+    @State private var alertMessage = ""
     @State var selectedTab: TopTabs = .players
     @State var isCheckedIn: Bool = false
     @FocusState private var isFocused: Bool
-    @EnvironmentObject var viewModel: AuthViewModel
+    @EnvironmentObject var authenticationViewModel: AuthViewModel
+    @EnvironmentObject var tournamentViewModel: TournamentViewModel
     
     var body: some View {
         TopTabBar(selectedTab: $selectedTab)
@@ -43,39 +41,91 @@ struct LeagueView: View {
         VStack {
             // Check in Button
             if (!isCheckedIn) {
+//                Button(action: {
+//                    showAlert = true
+//                }) {
+//                    HStack {
+//                        Text("Check In")
+//                            .fontWeight(.semibold)
+//                            .foregroundColor(.white)
+//                        Image(systemName: "figure.walk.arrival")
+//                            .foregroundColor(.white)
+//                    }
+//                    .frame(width: UIScreen.main.bounds.width - 85, height: 40)
+//                    .background(Color.blue)
+//                    .cornerRadius(10)
+//                    .padding(.top, 24)
+//                }
+//                .alert("Check in", isPresented: $showAlert, actions: {
+//                    TextField("Access Code", text: $accessCode)
+//                        .focused($isFocused)
+//                        .keyboardType(.numberPad)
+//                    Button(action: {}) {
+//                        Text("Cancel")
+//                            .foregroundColor(.red)
+//                    }
+//
+//                    Button("Confirm", action: {
+//                        Task {
+//                            await tournamentViewModel.verifyAccessCode(accessCode:accessCode)
+//                        }
+//
+//                        Task {
+//                            await authenticationViewModel.checkUserIn(isCheckedIn: isCheckedIn)
+//                        }
+//                        isCheckedIn.toggle()
+//                    })
+//                }, message: {
+//                    Text("Enter today's access code")
+//                })
                 Button(action: {
-                    showAlert = true
-                }) {
-                    HStack {
-                        Text("Check In")
-                            .fontWeight(.semibold)
-                            .foregroundColor(.white)
-                        Image(systemName: "figure.walk.arrival")
-                            .foregroundColor(.white)
-                    }
-                    .frame(width: UIScreen.main.bounds.width - 85, height: 40)
-                    .background(Color.blue)
-                    .cornerRadius(10)
-                    .padding(.top, 24)
+                showAlert = true
+            }) {
+                HStack {
+                    Text("Check In")
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                    Image(systemName: "figure.walk.arrival")
+                        .foregroundColor(.white)
                 }
-                .alert("Check in", isPresented: $showAlert, actions: {
-                    TextField("Access Code", text: $accessCode)
-                        .focused($isFocused)
-                        .keyboardType(.numberPad)
-                    Button(action: {}) {
-                        Text("Cancel")
-                            .foregroundColor(.red)
-                    }
-                    
-                    Button("Confirm", action: {
-                        isCheckedIn.toggle()
-                        Task {
-                            await viewModel.checkUserIn(isCheckedIn: isCheckedIn)
+                .frame(width: UIScreen.main.bounds.width - 85, height: 40)
+                .background(Color.blue)
+                .cornerRadius(10)
+                .padding(.top, 24)
+            }
+            .alert("Check in", isPresented: $showAlert, actions: {
+                TextField("Access Code", text: $accessCode)
+                    .focused($isFocused)
+                    .keyboardType(.numberPad)
+                Button(action: {}) {
+                    Text("Cancel")
+                        .foregroundColor(.red)
+                }
+                
+                Button("Confirm", action: {
+                    Task {
+                        let isAccessCodeValid = await tournamentViewModel.verifyAccessCode(accessCode: accessCode)
+                        if isAccessCodeValid {
+                            isCheckedIn.toggle()
+                            await authenticationViewModel.checkUserIn(isCheckedIn: isCheckedIn)
+                        } else {
+                            // Display an error message or take appropriate action when access code is invalid
+                            showAccessCodeAlert = true
+                            alertMessage = "Please try again. "
                         }
-                    })
-                }, message: {
-                    Text("Enter today's access code")
+                    }
                 })
+                
+            }, message: {
+                Text("Enter today's access code")
+            })
+            .alert(isPresented: $showAccessCodeAlert) {
+                Alert(
+                    title: Text("Invalid Access Code"),
+                    message: Text(alertMessage),
+                    dismissButton: .default(Text("OK"))
+                )
+            }
                 
             } else {
                 // Check out button
@@ -101,7 +151,7 @@ struct LeagueView: View {
                           primaryButton: .default(Text("Confirm"), action: {
                         isCheckedIn.toggle() // Toggle isCheckedIn here
                         Task {
-                            await viewModel.checkUserIn(isCheckedIn: isCheckedIn)
+                            await authenticationViewModel.checkUserIn(isCheckedIn: isCheckedIn)
                         }
                     }),
                           secondaryButton: .cancel(Text("Cancel")))

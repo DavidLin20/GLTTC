@@ -55,4 +55,62 @@ class TournamentViewModel: ObservableObject {
             }
         }
     }
+    
+    func getCurrentDate() -> String  {
+        var currentDate: String {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "MM/dd/yyyy"
+            return formatter.string(from: Date())
+        }
+        print(currentDate)
+        return currentDate
+    }
+    
+    func fetchTournamentByDate(date: String) async throws -> Tournament? {
+        
+        let querySnapshot = try await Firestore.firestore().collection("tournaments").whereField("date", isEqualTo: date).getDocuments()
+        
+        guard let document = querySnapshot.documents.first else {
+            print("No tournament found for date: \(date)")
+            return nil
+        }
+        
+        do {
+            let tournament = try document.data(as: Tournament.self)
+            return tournament
+        } catch {
+            print("Failed to decode tournament with error: \(error.localizedDescription)")
+            return nil
+        }
+    }
+    
+    func verifyAccessCode(accessCode: String) async -> Bool {
+        do {
+            guard let tournament = try await fetchTournamentByDate(date: getCurrentDate()) else {
+                return false
+            }
+            
+            return accessCode == tournament.accessCode
+        } catch {
+            print("Error in verifyAccessCode: \(error.localizedDescription)")
+            return false
+        }
+    }
+    
+//    do {
+//        let accessCode = "12345" // Example access code
+//        let isAccessCodeValid = try await verifyAccessCode(accessCode: accessCode)
+//
+//        if isAccessCodeValid {
+//            // Access code is valid
+//            print("Access code is valid")
+//        } else {
+//            // Access code is invalid or no tournament found
+//            print("Access code is invalid or no tournament found")
+//        }
+//    } catch {
+//        // Handle error
+//        print("Error in verifyAccessCode: \(error.localizedDescription)")
+//    }
+
 }
