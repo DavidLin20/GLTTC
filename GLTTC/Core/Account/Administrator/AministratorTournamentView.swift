@@ -1,13 +1,13 @@
 //
-//  TournamentView.swift
+//  AministratorTournamentViewModel.swift
 //  GLTTC
 //
-//  Created by Mac-Noble Brako-Kusi on 7/1/23.
+//  Created by Mac-Noble Brako-Kusi on 7/5/23.
 //
 
 import SwiftUI
 
-struct TournamentView: View {
+struct AdministratorTournamentView: View {
     @StateObject private var viewModel = TournamentViewModel()
     @State private var accessCode = ""
     @State private var date = ""
@@ -36,20 +36,15 @@ struct TournamentView: View {
                         }
                         .padding()
                    
-                   Text("Tournaments")
-                       .font(.title)
-                       .padding()
-                   
                    List(viewModel.tournaments) { tournament in
                        Text(tournament.accessCode)
                    }
                }
-               
-           }
     }
+}
 
-struct TournamentView_Previews: PreviewProvider {
+struct AministratorTournamentViewModel_Previews: PreviewProvider {
     static var previews: some View {
-        TournamentView()
+        AdministratorTournamentView()
     }
 }
