@@ -18,21 +18,32 @@ class TournamentViewModel: ObservableObject {
         
         do {
             let encodedTournament = try Firestore.Encoder().encode(tournament)
-            Firestore.firestore().collection("tournaments").document(tournament.id).setData(encodedTournament)
+            Firestore.firestore().collection("tournaments").document(tournament.id).setData(encodedTournament) { error in
+                if let error = error {
+                    print("Failed to create tournament with error: \(error.localizedDescription)")
+                }
+            }
         } catch {
-            print("Failed to create tournament with error: \(error.localizedDescription)")
+            print("Failed to encode tournament with error: \(error.localizedDescription)")
         }
     }
     
     func fetchTournaments() {
-        Firestore.firestore().collection("tournaments").getDocuments { (snapshot, error) in
+        Firestore.firestore().collection("tournaments").getDocuments { snapshot, error in
+            if let error = error {
+                print("Failed to fetch tournaments with error: \(error.localizedDescription)")
+                return
+            }
+            
             guard let documents = snapshot?.documents else {
-                print("Failed to fetch tournaments with error: \(error?.localizedDescription ?? "")")
+                print("No tournaments found")
                 return
             }
             
             do {
-                let tournaments = try documents.compactMap { try $0.data(as: Tournament.self) }
+                let tournaments = try documents.compactMap { document -> Tournament? in
+                    try document.data(as: Tournament.self)
+                }
                 
                 self.tournaments = tournaments
                 

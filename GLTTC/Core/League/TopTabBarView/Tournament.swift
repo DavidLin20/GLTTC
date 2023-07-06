@@ -11,9 +11,6 @@ struct Tournament: Identifiable, Codable {
     let id: String
     let accessCode: String
     let date: String
-
-    
-
 }
 
 

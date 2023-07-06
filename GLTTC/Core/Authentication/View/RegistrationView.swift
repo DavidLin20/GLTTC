@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RegistrationView: View {
+    @State private var isAdmin = false
     @State private var email = ""
     @State private var firstName = ""
     @State private var lastName = ""
@@ -82,7 +83,7 @@ struct RegistrationView: View {
             Button{
                 Task{
                     
-                    try await viewModel.createUser(withEmail:email, password: password, firstName: firstName, lastName:lastName, isCheckedIn:isCheckedIn, rating: rating)
+                    try await viewModel.createUser(isAdmin:isAdmin, withEmail:email, password: password, firstName: firstName, lastName:lastName, isCheckedIn:isCheckedIn, rating: rating)
                 }
             } label: {
                 HStack{
