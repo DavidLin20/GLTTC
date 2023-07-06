@@ -19,6 +19,7 @@ struct LeagueView: View {
     @State var isCheckedIn: Bool = false
     @FocusState private var isFocused: Bool
     @EnvironmentObject var viewModel: AuthViewModel
+    
     var body: some View {
         TopTabBar(selectedTab: $selectedTab)
         //Spacer()
