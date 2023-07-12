@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		639C0E8C2A57A59800F5CACC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 639C0E8B2A57A59800F5CACC /* GoogleService-Info.plist */; };
+		639C0E8E2A5A22EA00F5CACC /* WaitingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639C0E8D2A5A22EA00F5CACC /* WaitingList.swift */; };
+		639C0E922A5E0D6F00F5CACC /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639C0E912A5E0D6F00F5CACC /* Match.swift */; };
+		639C0E952A5E0F4000F5CACC /* MatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639C0E942A5E0F4000F5CACC /* MatchViewModel.swift */; };
 		822ED2DC2A57A3F600E1DD06 /* LoggedInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822ED2B22A57A3F600E1DD06 /* LoggedInView.swift */; };
 		822ED2DD2A57A3F600E1DD06 /* BottomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822ED2B42A57A3F600E1DD06 /* BottomTabBar.swift */; };
 		822ED2DE2A57A3F600E1DD06 /* TournamentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822ED2B62A57A3F600E1DD06 /* TournamentViewModel.swift */; };
@@ -33,7 +37,6 @@
 		822ED2F32A57A3F600E1DD06 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822ED2D92A57A3F600E1DD06 /* SettingsRowView.swift */; };
 		822ED2F42A57A3F600E1DD06 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822ED2DA2A57A3F600E1DD06 /* User.swift */; };
 		822ED2F52A57A3F600E1DD06 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822ED2DB2A57A3F600E1DD06 /* InputView.swift */; };
-		822ED2F72A57A47300E1DD06 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 822ED2F62A57A47300E1DD06 /* GoogleService-Info.plist */; };
 		82FF00A12A4CDF160057BFAF /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 82FF00A02A4CDF160057BFAF /* FirebaseAnalytics */; };
 		82FF00A32A4CDF160057BFAF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 82FF00A22A4CDF160057BFAF /* FirebaseAuth */; };
 		82FF00A52A4CDF160057BFAF /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 82FF00A42A4CDF160057BFAF /* FirebaseFirestore */; };
@@ -43,6 +46,10 @@
 
 /* Begin PBXFileReference section */
 		633DC3622A4B8F7D00A73ABF /* GLTTC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GLTTC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		639C0E8B2A57A59800F5CACC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		639C0E8D2A5A22EA00F5CACC /* WaitingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingList.swift; sourceTree = "<group>"; };
+		639C0E912A5E0D6F00F5CACC /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		639C0E942A5E0F4000F5CACC /* MatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewModel.swift; sourceTree = "<group>"; };
 		822ED2B22A57A3F600E1DD06 /* LoggedInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedInView.swift; sourceTree = "<group>"; };
 		822ED2B42A57A3F600E1DD06 /* BottomTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomTabBar.swift; sourceTree = "<group>"; };
 		822ED2B62A57A3F600E1DD06 /* TournamentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentViewModel.swift; sourceTree = "<group>"; };
@@ -69,7 +76,6 @@
 		822ED2D92A57A3F600E1DD06 /* SettingsRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		822ED2DA2A57A3F600E1DD06 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		822ED2DB2A57A3F600E1DD06 /* InputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
-		822ED2F62A57A47300E1DD06 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,10 +110,29 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		639C0E8F2A5E012200F5CACC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				822ED2BB2A57A3F600E1DD06 /* Tournament.swift */,
+				822ED2DA2A57A3F600E1DD06 /* User.swift */,
+				639C0E8D2A5A22EA00F5CACC /* WaitingList.swift */,
+				639C0E912A5E0D6F00F5CACC /* Match.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		639C0E932A5E0F1A00F5CACC /* Match */ = {
+			isa = PBXGroup;
+			children = (
+				639C0E942A5E0F4000F5CACC /* MatchViewModel.swift */,
+			);
+			path = Match;
+			sourceTree = "<group>";
+		};
 		822ED2AF2A57A3F600E1DD06 /* GLTTC */ = {
 			isa = PBXGroup;
 			children = (
-				822ED2F62A57A47300E1DD06 /* GoogleService-Info.plist */,
+				639C0E8B2A57A59800F5CACC /* GoogleService-Info.plist */,
 				822ED2B02A57A3F600E1DD06 /* Core */,
 				822ED2D32A57A3F600E1DD06 /* App */,
 				822ED2D52A57A3F600E1DD06 /* Assets.xcassets */,
@@ -120,6 +145,8 @@
 		822ED2B02A57A3F600E1DD06 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				639C0E932A5E0F1A00F5CACC /* Match */,
+				639C0E8F2A5E012200F5CACC /* Model */,
 				822ED2B12A57A3F600E1DD06 /* LoggedInView */,
 				822ED2B32A57A3F600E1DD06 /* BottomTabBar */,
 				822ED2B52A57A3F600E1DD06 /* Tournament */,
@@ -176,7 +203,6 @@
 		822ED2BA2A57A3F600E1DD06 /* TopTabBarView */ = {
 			isa = PBXGroup;
 			children = (
-				822ED2BB2A57A3F600E1DD06 /* Tournament.swift */,
 				822ED2BC2A57A3F600E1DD06 /* PlayersView.swift */,
 				822ED2BD2A57A3F600E1DD06 /* WaitingView.swift */,
 				822ED2BE2A57A3F600E1DD06 /* OnDeckView.swift */,
@@ -276,7 +302,6 @@
 			isa = PBXGroup;
 			children = (
 				822ED2D92A57A3F600E1DD06 /* SettingsRowView.swift */,
-				822ED2DA2A57A3F600E1DD06 /* User.swift */,
 				822ED2DB2A57A3F600E1DD06 /* InputView.swift */,
 			);
 			path = Components;
@@ -351,8 +376,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				822ED2F22A57A3F600E1DD06 /* Preview Assets.xcassets in Resources */,
+				639C0E8C2A57A59800F5CACC /* GoogleService-Info.plist in Resources */,
 				822ED2F12A57A3F600E1DD06 /* Assets.xcassets in Resources */,
-				822ED2F72A57A47300E1DD06 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,12 +390,14 @@
 			files = (
 				822ED2EB2A57A3F600E1DD06 /* AministratorTournamentView.swift in Sources */,
 				822ED2DE2A57A3F600E1DD06 /* TournamentViewModel.swift in Sources */,
+				639C0E8E2A5A22EA00F5CACC /* WaitingList.swift in Sources */,
 				822ED2E82A57A3F600E1DD06 /* ProfileView.swift in Sources */,
 				822ED2EF2A57A3F600E1DD06 /* UserAccountView.swift in Sources */,
 				822ED2ED2A57A3F600E1DD06 /* RegistrationView.swift in Sources */,
 				822ED2E62A57A3F600E1DD06 /* ContentView.swift in Sources */,
 				822ED2DF2A57A3F600E1DD06 /* TopTabBar.swift in Sources */,
 				822ED2E92A57A3F600E1DD06 /* AccountView.swift in Sources */,
+				639C0E922A5E0D6F00F5CACC /* Match.swift in Sources */,
 				822ED2E72A57A3F600E1DD06 /* RatingView.swift in Sources */,
 				822ED2EC2A57A3F600E1DD06 /* AuthViewModel.swift in Sources */,
 				822ED2E32A57A3F600E1DD06 /* OnDeckView.swift in Sources */,
@@ -380,6 +407,7 @@
 				822ED2EA2A57A3F600E1DD06 /* AdministratorAccountView.swift in Sources */,
 				822ED2DD2A57A3F600E1DD06 /* BottomTabBar.swift in Sources */,
 				822ED2DC2A57A3F600E1DD06 /* LoggedInView.swift in Sources */,
+				639C0E952A5E0F4000F5CACC /* MatchViewModel.swift in Sources */,
 				822ED2EE2A57A3F600E1DD06 /* LoginView.swift in Sources */,
 				822ED2F32A57A3F600E1DD06 /* SettingsRowView.swift in Sources */,
 				822ED2E02A57A3F600E1DD06 /* Tournament.swift in Sources */,
