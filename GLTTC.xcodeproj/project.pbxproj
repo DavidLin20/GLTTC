@@ -37,6 +37,8 @@
 		822ED2F32A57A3F600E1DD06 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822ED2D92A57A3F600E1DD06 /* SettingsRowView.swift */; };
 		822ED2F42A57A3F600E1DD06 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822ED2DA2A57A3F600E1DD06 /* User.swift */; };
 		822ED2F52A57A3F600E1DD06 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822ED2DB2A57A3F600E1DD06 /* InputView.swift */; };
+		82D4D1D92A5F7C6F0037FE91 /* OnDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D4D1D82A5F7C6F0037FE91 /* OnDeck.swift */; };
+		82D4D1DB2A5F7DB50037FE91 /* OnDeckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D4D1DA2A5F7DB50037FE91 /* OnDeckViewModel.swift */; };
 		82FF00A12A4CDF160057BFAF /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 82FF00A02A4CDF160057BFAF /* FirebaseAnalytics */; };
 		82FF00A32A4CDF160057BFAF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 82FF00A22A4CDF160057BFAF /* FirebaseAuth */; };
 		82FF00A52A4CDF160057BFAF /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 82FF00A42A4CDF160057BFAF /* FirebaseFirestore */; };
@@ -76,6 +78,8 @@
 		822ED2D92A57A3F600E1DD06 /* SettingsRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		822ED2DA2A57A3F600E1DD06 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		822ED2DB2A57A3F600E1DD06 /* InputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		82D4D1D82A5F7C6F0037FE91 /* OnDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnDeck.swift; sourceTree = "<group>"; };
+		82D4D1DA2A5F7DB50037FE91 /* OnDeckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnDeckViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,7 @@
 				822ED2DA2A57A3F600E1DD06 /* User.swift */,
 				639C0E8D2A5A22EA00F5CACC /* WaitingList.swift */,
 				639C0E912A5E0D6F00F5CACC /* Match.swift */,
+				82D4D1D82A5F7C6F0037FE91 /* OnDeck.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -145,6 +150,7 @@
 		822ED2B02A57A3F600E1DD06 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				82D4D1DC2A5F7DEA0037FE91 /* OnDeck */,
 				639C0E932A5E0F1A00F5CACC /* Match */,
 				639C0E8F2A5E012200F5CACC /* Model */,
 				822ED2B12A57A3F600E1DD06 /* LoggedInView */,
@@ -307,6 +313,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		82D4D1DC2A5F7DEA0037FE91 /* OnDeck */ = {
+			isa = PBXGroup;
+			children = (
+				82D4D1DA2A5F7DB50037FE91 /* OnDeckViewModel.swift */,
+			);
+			path = OnDeck;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -389,8 +403,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				822ED2EB2A57A3F600E1DD06 /* AministratorTournamentView.swift in Sources */,
+				82D4D1DB2A5F7DB50037FE91 /* OnDeckViewModel.swift in Sources */,
 				822ED2DE2A57A3F600E1DD06 /* TournamentViewModel.swift in Sources */,
 				639C0E8E2A5A22EA00F5CACC /* WaitingList.swift in Sources */,
+				82D4D1D92A5F7C6F0037FE91 /* OnDeck.swift in Sources */,
 				822ED2E82A57A3F600E1DD06 /* ProfileView.swift in Sources */,
 				822ED2EF2A57A3F600E1DD06 /* UserAccountView.swift in Sources */,
 				822ED2ED2A57A3F600E1DD06 /* RegistrationView.swift in Sources */,
