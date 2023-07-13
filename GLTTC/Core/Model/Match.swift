@@ -7,8 +7,6 @@
 
 import Foundation
 
-import Foundation
-
 struct Match: Identifiable, Codable {
     let id: String
     let tournamentId: String

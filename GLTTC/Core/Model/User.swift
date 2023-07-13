@@ -15,6 +15,7 @@ struct User: Identifiable, Codable {
     let email: String
     var isCheckedIn: Bool
     var rating: Int
+    var tempOpponentSet: Set<String>
     
     
     var initials: String {

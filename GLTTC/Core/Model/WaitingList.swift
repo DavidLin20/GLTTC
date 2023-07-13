@@ -62,32 +62,41 @@ class WaitingList {
         }
     }
     
+    
     // Remove the first node of the linked list
-    func removeFirst() {
+    func removeFirstPlayer() -> Node? {
         if !isEmpty {
+            let removedNode = head
             head = head?.next
+            return removedNode
         }
+        return nil
     }
     
     // Remove the last node of the linked list
-    func removeLast() {
+    func removeLast() -> Node? {
         if !isEmpty {
             if head?.next == nil {
+                let removedNode = head
                 head = nil
+                return removedNode
             } else {
                 var current = head
                 while current?.next?.next != nil {
                     current = current?.next
                 }
+                let removedNode = current?.next
                 current?.next = nil
+                return removedNode
             }
         }
+        return nil
     }
     
     // Remove the node at a specific position in the linked list
-    func remove(at index: Int) {
+    func removePlayer(at index: Int) -> Node? {
         if index == 0 {
-            removeFirst()
+            return removeFirstPlayer()
         } else {
             var current = head
             var currentIndex = 0
@@ -95,7 +104,9 @@ class WaitingList {
                 current = current?.next
                 currentIndex += 1
             }
+            let removedNode = current?.next
             current?.next = current?.next?.next
+            return removedNode
         }
     }
     
@@ -113,12 +124,46 @@ class WaitingList {
         print(listString)
     }
     
-//    func findOpponent(user: User) {
-//        var count = 0
-//        let windowSize = 5
-//        var current = head
-//        while (current != nil && count <= windowSize) {
-//            if (
-//        }
-//    }
+    func findOpponent() -> Node? {
+        var opponents = [User]()
+        let playerOne = head?.value
+        var count = 0
+        let windowSize = 5
+        var current = head?.next
+        var opponentIndex = 1
+        
+        while (current != nil && count <= windowSize) {
+            if let opponentID = current?.value.id,
+                !(playerOne?.tempOpponentSet.contains(opponentID) ?? false) {
+                opponents.append(current!.value)
+                count += 1
+            }
+            current = current?.next
+            opponentIndex += 1
+        }
+        
+        var minRatingDifference = Int.max
+        var selectedOpponent: User?
+        var selectedOpponentIndex: Int?
+        
+        for (index, opponent) in opponents.enumerated() {
+            let ratingDifference = abs(playerOne?.rating ?? 0 - opponent.rating)
+            if ratingDifference < minRatingDifference {
+                minRatingDifference = ratingDifference
+                selectedOpponent = opponent
+                selectedOpponentIndex = index
+            }
+        }
+        
+        if let opponent = selectedOpponent, let index = selectedOpponentIndex {
+            // Do something with the opponent with the smallest rating difference
+            print("Selected opponent: \(opponent)")
+            
+             let opponentNodeIndex = opponentIndex - (count - index) // verify math
+             return removePlayer(at: opponentNodeIndex)
+        }
+        
+        return nil
+    }
+
 }
