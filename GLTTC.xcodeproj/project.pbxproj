@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		639C0E8C2A57A59800F5CACC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 639C0E8B2A57A59800F5CACC /* GoogleService-Info.plist */; };
-		639C0E8E2A5A22EA00F5CACC /* WaitingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639C0E8D2A5A22EA00F5CACC /* WaitingList.swift */; };
+		639C0E8E2A5A22EA00F5CACC /* PlayersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639C0E8D2A5A22EA00F5CACC /* PlayersList.swift */; };
 		639C0E922A5E0D6F00F5CACC /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639C0E912A5E0D6F00F5CACC /* Match.swift */; };
 		639C0E952A5E0F4000F5CACC /* MatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639C0E942A5E0F4000F5CACC /* MatchViewModel.swift */; };
 		639C0E9B2A6098C100F5CACC /* ChangePlayingStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639C0E9A2A6098C100F5CACC /* ChangePlayingStatusViewModel.swift */; };
@@ -41,6 +41,7 @@
 		822ED2F32A57A3F600E1DD06 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822ED2D92A57A3F600E1DD06 /* SettingsRowView.swift */; };
 		822ED2F42A57A3F600E1DD06 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822ED2DA2A57A3F600E1DD06 /* User.swift */; };
 		822ED2F52A57A3F600E1DD06 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822ED2DB2A57A3F600E1DD06 /* InputView.swift */; };
+		82B5AD992AC4E287007D50AF /* PlayersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B5AD982AC4E287007D50AF /* PlayersViewModel.swift */; };
 		82D4D1D92A5F7C6F0037FE91 /* OnDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D4D1D82A5F7C6F0037FE91 /* OnDeck.swift */; };
 		82D4D1DB2A5F7DB50037FE91 /* OnDeckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D4D1DA2A5F7DB50037FE91 /* OnDeckViewModel.swift */; };
 		82FF00A12A4CDF160057BFAF /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 82FF00A02A4CDF160057BFAF /* FirebaseAnalytics */; };
@@ -53,7 +54,7 @@
 /* Begin PBXFileReference section */
 		633DC3622A4B8F7D00A73ABF /* GLTTC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GLTTC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		639C0E8B2A57A59800F5CACC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		639C0E8D2A5A22EA00F5CACC /* WaitingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingList.swift; sourceTree = "<group>"; };
+		639C0E8D2A5A22EA00F5CACC /* PlayersList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersList.swift; sourceTree = "<group>"; };
 		639C0E912A5E0D6F00F5CACC /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		639C0E942A5E0F4000F5CACC /* MatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewModel.swift; sourceTree = "<group>"; };
 		639C0E9A2A6098C100F5CACC /* ChangePlayingStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePlayingStatusViewModel.swift; sourceTree = "<group>"; };
@@ -86,6 +87,7 @@
 		822ED2D92A57A3F600E1DD06 /* SettingsRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		822ED2DA2A57A3F600E1DD06 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		822ED2DB2A57A3F600E1DD06 /* InputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		82B5AD982AC4E287007D50AF /* PlayersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersViewModel.swift; sourceTree = "<group>"; };
 		82D4D1D82A5F7C6F0037FE91 /* OnDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnDeck.swift; sourceTree = "<group>"; };
 		82D4D1DA2A5F7DB50037FE91 /* OnDeckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnDeckViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,7 +127,7 @@
 		639C0E8F2A5E012200F5CACC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				639C0E8D2A5A22EA00F5CACC /* WaitingList.swift */,
+				639C0E8D2A5A22EA00F5CACC /* PlayersList.swift */,
 				822ED2BB2A57A3F600E1DD06 /* Tournament.swift */,
 				822ED2DA2A57A3F600E1DD06 /* User.swift */,
 				82D4D1D82A5F7C6F0037FE91 /* OnDeck.swift */,
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				639C0E9A2A6098C100F5CACC /* ChangePlayingStatusViewModel.swift */,
+				82B5AD982AC4E287007D50AF /* PlayersViewModel.swift */,
 			);
 			path = PlayingStatus;
 			sourceTree = "<group>";
@@ -417,7 +420,8 @@
 				822ED2EB2A57A3F600E1DD06 /* AdministratorTournamentView.swift in Sources */,
 				82D4D1DB2A5F7DB50037FE91 /* OnDeckViewModel.swift in Sources */,
 				822ED2DE2A57A3F600E1DD06 /* TournamentViewModel.swift in Sources */,
-				639C0E8E2A5A22EA00F5CACC /* WaitingList.swift in Sources */,
+				82B5AD992AC4E287007D50AF /* PlayersViewModel.swift in Sources */,
+				639C0E8E2A5A22EA00F5CACC /* PlayersList.swift in Sources */,
 				82D4D1D92A5F7C6F0037FE91 /* OnDeck.swift in Sources */,
 				822ED2E82A57A3F600E1DD06 /* ProfileView.swift in Sources */,
 				822ED2EF2A57A3F600E1DD06 /* UserAccountView.swift in Sources */,

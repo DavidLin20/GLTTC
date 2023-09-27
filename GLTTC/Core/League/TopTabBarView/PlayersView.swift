@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct PlayersView: View {
+    @StateObject var playersViewModel = PlayerViewModel()
+    
     var body: some View {
         Text("Hello, from Players View!")
+        Button("Fetch Users"){
+            playersViewModel.displayPlayers();
+        }
+        
     }
 }
 

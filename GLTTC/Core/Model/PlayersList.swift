@@ -18,7 +18,7 @@ class Node {
 }
 
 class WaitingList {
-    private var head: Node?
+     var head: Node?
     
     // Check if the linked list is empty
     var isEmpty: Bool {
