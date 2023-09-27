@@ -124,46 +124,46 @@ class WaitingList {
         print(listString)
     }
     
-    func findOpponent() -> Node? {
-        var opponents = [User]()
-        let playerOne = head?.value
-        var count = 0
-        let windowSize = 5
-        var current = head?.next
-        var opponentIndex = 1
-        
-        while (current != nil && count <= windowSize) {
-            if let opponentID = current?.value.id,
-                !(playerOne?.tempOpponentSet.contains(opponentID) ?? false) {
-                opponents.append(current!.value)
-                count += 1
-            }
-            current = current?.next
-            opponentIndex += 1
-        }
-        
-        var minRatingDifference = Int.max
-        var selectedOpponent: User?
-        var selectedOpponentIndex: Int?
-        
-        for (index, opponent) in opponents.enumerated() {
-            let ratingDifference = abs(playerOne?.rating ?? 0 - opponent.rating)
-            if ratingDifference < minRatingDifference {
-                minRatingDifference = ratingDifference
-                selectedOpponent = opponent
-                selectedOpponentIndex = index
-            }
-        }
-        
-        if let opponent = selectedOpponent, let index = selectedOpponentIndex {
-            // Do something with the opponent with the smallest rating difference
-            print("Selected opponent: \(opponent)")
-            
-             let opponentNodeIndex = opponentIndex - (count - index) // verify math
-             return removePlayer(at: opponentNodeIndex)
-        }
-        
-        return nil
-    }
+//    func findOpponent() -> Node? {
+//        var opponents = [User]()
+//        let playerOne = head?.value
+//        var count = 0
+//        let windowSize = 5
+//        var current = head?.next
+//        var opponentIndex = 1
+//        
+//        while (current != nil && count <= windowSize) {
+//            if let opponentID = current?.value.id,
+//                !(playerOne?.tempOpponentSet.contains(opponentID) ?? false) {
+//                opponents.append(current!.value)
+//                count += 1
+//            }
+//            current = current?.next
+//            opponentIndex += 1
+//        }
+//        
+//        var minRatingDifference = Int.max
+//        var selectedOpponent: User?
+//        var selectedOpponentIndex: Int?
+//        
+//        for (index, opponent) in opponents.enumerated() {
+//            let ratingDifference = abs(playerOne?.rating ?? 0 - opponent.rating)
+//            if ratingDifference < minRatingDifference {
+//                minRatingDifference = ratingDifference
+//                selectedOpponent = opponent
+//                selectedOpponentIndex = index
+//            }
+//        }
+//        
+//        if let opponent = selectedOpponent, let index = selectedOpponentIndex {
+//            // Do something with the opponent with the smallest rating difference
+//            print("Selected opponent: \(opponent)")
+//            
+//             let opponentNodeIndex = opponentIndex - (count - index) // verify math
+//             return removePlayer(at: opponentNodeIndex)
+//        }
+//        
+//        return nil
+//    }
 
 }

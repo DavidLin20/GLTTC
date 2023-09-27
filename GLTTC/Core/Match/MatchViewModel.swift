@@ -70,9 +70,9 @@ class MatchViewModel: ObservableObject {
             var playerTwoWinCount = 0
             
             for game in 1...5 {
-                if match.playerOneScore[game] > match.playerTwoScore[game] {
+                if match.scoreBoard.scoreArrayOne[game] > match.scoreBoard.scoreArrayTwo[game] {
                     playerOneWinCount += 1
-                } else if match.playerOneScore[game] < match.playerTwoScore[game] {
+                } else if match.scoreBoard.scoreArrayOne[game] < match.scoreBoard.scoreArrayTwo[game] {
                     playerTwoWinCount += 1
                 }
             }

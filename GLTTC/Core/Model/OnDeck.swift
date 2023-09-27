@@ -7,9 +7,6 @@
 
 import Foundation
 
-struct OnDeck:  Codable {
-    var playerOne : User
-    var palyerTwo: User
-    
-    
+struct onDeck {
+    var match: Match
 }
